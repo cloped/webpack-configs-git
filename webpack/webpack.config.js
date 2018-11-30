@@ -1,4 +1,5 @@
 const path = require('path'); // used do after get path
+const CleanWebpackPlugin = require('clean-webpack-plugin') // to erase files that were renamed
 
 module.exports = {
   entry : ['@babel/polyfill', './app-src/app.js'], // entry is where the index.js/app.js/main.js comes and the polyfill also
@@ -17,5 +18,8 @@ module.exports = {
       }
     ]
   }
+  plugins: [
+    new CleanWebpackPlugin(['dist']) // folder to remove files 
+  ]
 }
 
